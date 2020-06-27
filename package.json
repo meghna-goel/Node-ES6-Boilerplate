@@ -1,0 +1,33 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev-start": "babel-watch ./src/index",
+    "start": "npm run build && node ./dist/index",
+    "build": "npm run clean && npm run babel-build",
+    "clean": "rimraf ./dist && mkdir dist",
+    "babel-build": "babel -d ./dist ./src -s",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/preset-env": "^7.10.3",
+    "babel-polyfill": "^6.26.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "babel-watch": "^7.0.0"
+  }
+}
